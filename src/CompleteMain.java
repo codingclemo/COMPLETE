@@ -13,7 +13,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-public class CompleteMain extends Application implements EventHandler<KeyEvent> {
+public class CompleteMain extends Application { // implements EventHandler<KeyEvent> {
 
 
 	private Button loginButton;
@@ -193,6 +193,8 @@ public class CompleteMain extends Application implements EventHandler<KeyEvent> 
 		
 	}
 	
+	
+	
 	Stage window;
 	Scene loginScene;
 	Scene registrationScene;
@@ -223,7 +225,12 @@ public class CompleteMain extends Application implements EventHandler<KeyEvent> 
 
 		registrationScene = new Scene(registrationPane, 500, 500);
 		
-		window.setScene(loginScene);
+		Pane userPane = new UserProfile().getUserProfile();
+		Scene userProfileScene = new Scene(userPane, 1000, 500);
+		
+		window.setScene(userProfileScene);
+		
+//		window.setScene(loginScene);
 		window.setMinWidth(400);
 		window.setMinHeight(400);
 		
